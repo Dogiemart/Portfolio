@@ -1,12 +1,9 @@
-/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
-/* Light Theme */
 :root {
   --bg-color: #ffbf69;
   --text-color: #000000;
@@ -23,8 +20,6 @@
   --footer-bg: #222;
 }
 
-
-/* Body Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
@@ -36,8 +31,6 @@ body {
   min-height: 100vh;
 }
 
-
-/* Toggle Button */
 .toggle-btn {
   position: fixed;
   top: 10px;
@@ -166,7 +159,6 @@ nav ul li a:hover {
   flex: 1;
 }
 
-/* Footer */
 footer {
   background-color: var(--footer-bg);
   text-align: center;
