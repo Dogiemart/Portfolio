@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J.Co</title>
   <link rel="stylesheet" href="style.css" />
-</head>
+</head> 
+
 <body>
+  <button id="dark-mode-toggle" class="toggle-btn">
+    <img src="images/dark.png" alt="Dark Mode" style="width: 30px; height: 20px; margin-bottom: -15%;" />
+  </button>
 
-  <!-- Dark Mode Toggle -->
-  <input type="checkbox" id="dark-mode-toggle" hidden />
-  <label for="dark-mode-toggle" class="toggle-btn">
-  <img src="images/dark.png" alt="Dark Mode" style="width: 30px; height: 20px; margin-bottom: -15%;" />
-  </label>
-
-
-  <!-- Page content wrapper for theme switching -->
   <div class="page">
-
     <header>
       <nav>
         <div class="nav-left">
@@ -46,22 +41,30 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="aboutsection">
+    <section id="about" class="about">
       <div class="aboutcontainer">
-        <div class="res-text">
-           <h2>About</h2>
-          <p><b>Developed Hicky Restaurant Project.</b></p>
-          <img src="images/web.png" alt="Restaurant" />
-       </div>
-        <div class="dev-text">
-          <p><b>Attended Dev Fest Butuan!</b></p>
-          <img src="images/dev.png" alt="Dev Fest Image" />
+        <h1 class="about-title">About</h1>
+        <div class="about-images">
+          <div class="res-text">
+            <img src="images/web.png" alt="Restaurant Project">
+          </div>
+          <div class="dev-text">
+            <img src="images/dev.png" alt="DevFest Butuan">
+          </div>
+        </div>
+
+        <div class="summary">
+          <h2>Summary</h2>
+          <p id="summary-text">
+            Passionate about creating scalable applications and contributing to
+            innovative communities. I enjoy working with new technologies to
+            combine design, coding, technology, and user experience.
+          </p>
+          <button class="edit-btn" onclick="toggleEdit('summary-text', this)">Edit</button>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
@@ -70,12 +73,39 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <p>&copy; 2025 @Josh</p>
     </footer>
+  </div>
 
-  </div> <!-- End of .page -->
+  <script>
+    const toggleBtn = document.getElementById("dark-mode-toggle");
+    const page = document.querySelector(".page");
 
+    if (localStorage.getItem("theme") === "dark") {
+      page.classList.add("dark");
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      page.classList.toggle("dark");
+      if (page.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    function toggleEdit(id, button) {
+      const element = document.getElementById(id);
+      if (element.isContentEditable) {
+        element.contentEditable = "false";
+        button.textContent = "Edit";
+      } else {
+        element.contentEditable = "true";
+        element.focus();
+        button.textContent = "Save";
+      }
+    }
+  </script>
 </body>
 </html>
