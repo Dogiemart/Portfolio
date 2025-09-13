@@ -8,23 +8,21 @@
 </head>
 <body>
 
-  <input type = "checkbox" id="dark-mode-toggle" hidden />
-  <label for = "dark-mode-toggle" class="toggle-btn">
-  <img src = "dark.png" alt="Dark Mode" style="width: 30px; height: 20px; margin-bottom: -15%;" />
-  </label>
+  <!-- Dark Mode Toggle Button -->
+  <button id="dark-mode-btn" class="toggle-btn">🌙</button>
 
-  <div class = "page">
+  <div class="page">
     <header>
       <nav>
-        <div class = "nav-left">
+        <div class="nav-left">
           <ul>
-            <li><a href = "#home">Home</a></li>
+            <li><a href="#home">Home</a></li>
           </ul>
         </div>
         <div class="nav-right">
           <ul>
-            <li><a href = "#about">About</a></li>
-            <li><a href = "#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
@@ -33,11 +31,16 @@
     <section id="home" class="section">
       <div class="homecontainer">
         <div class="home-image">
-          <img src ="josh1.png" alt="Image" />
+          <img src="josh1.png" alt="Image" />
         </div>
-        <div class = "home-text">
+        <div class="home-text">
           <h1>Hello, I’m Joshua!</h1>
-          <p>A dedicated Computer Science student specializing in Full stack web development and Cyber Security. With over 2 years of experience, I design and develop scalable, efficient solutions that drive business success. My expertise spans across latest adaptation and versatility, enabling me to deliver high-quality projects from concept to deployment. I am passionate about leveraging technology to solve real-world problems and continuously improving my craft through learning and collaboration.</p>
+          <p>
+            A dedicated Computer Science student specializing in Full stack web development and Cyber Security. 
+            With over 2 years of experience, I design and develop scalable, efficient solutions that drive business success. 
+            My expertise spans across latest adaptation and versatility, enabling me to deliver high-quality projects from concept to deployment. 
+            I am passionate about leveraging technology to solve real-world problems and continuously improving my craft through learning and collaboration.
+          </p>
         </div>
       </div>
     </section>
@@ -45,19 +48,19 @@
     <section id="about" class="aboutsection">
       <div class="aboutcontainer">
         <div class="res-text">
-           <h2>About</h2>
+          <h2>About</h2>
           <p><b>Developed Hicky Restaurant Project.</b></p>
           <img src="web.png" alt="Restaurant" />
-       </div>
-        <div class = "dev-text">
+        </div>
+        <div class="dev-text">
           <p><b>Attended Dev Fest Butuan!</b></p>
-          <img src="dev.png" alt = "Dev Fest Image" />
+          <img src="dev.png" alt="Dev Fest Image" />
         </div>
       </div>
     </section>
 
-    <section id = "contact" class="section">
-      <div class = "container">
+    <section id="contact" class="section">
+      <div class="container">
         <h2>Contact</h2>
         <p>Email me: joshuamuyacoco@gmail.com.</p>
         <p>Phone: 09396458666.</p>
@@ -65,9 +68,25 @@
     </section>
 
     <footer>
-      <p> &copy; 2025 @Josh </p>
+      <p>&copy; 2025 @Josh</p>
     </footer>
-
   </div>
+
+  <!-- JavaScript for Dark Mode -->
+  <script>
+    const toggleBtn = document.getElementById("dark-mode-btn");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+
+      // Change icon
+      if (body.classList.contains("dark-mode")) {
+        toggleBtn.textContent = "☀️";
+      } else {
+        toggleBtn.textContent = "🌙";
+      }
+    });
+  </script>
 </body>
 </html>
