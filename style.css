@@ -1,9 +1,12 @@
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+/* Light Theme */
 :root {
   --bg-color: #ffbf69;
   --text-color: #000000;
@@ -11,23 +14,30 @@
   --nav-bg: #ff9f1c;
   --footer-bg: #ffffff;
 }
-body.dark-mode {
+
+#dark-mode-toggle:checked ~ .page {
   --bg-color: #121212;
   --text-color: #e0e0e0;
   --primary-color: #4da8da;
   --nav-bg: #1e1e1e;
   --footer-bg: #222;
 }
+
+
+/* Body Styles */
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
 }
+
 .page {
   background-color: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
 }
-/* Dark Mode Button */
+
+
+/* Toggle Button */
 .toggle-btn {
   position: fixed;
   top: 10px;
@@ -35,21 +45,17 @@ body {
   background: var(--primary-color);
   color: white;
   padding: 8px 12px;
-  border-radius: 50%;
+  border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
-  border: none;
-  font-size: 1.2rem;
-  transition: background 0.3s ease, transform 0.2s ease;
 }
-.toggle-btn:hover {
-  transform: scale(1.1);
-}
+
 header {
   background-color: var(--nav-bg);
   padding: 1em 0;
   border-bottom: 1px solid #ccc;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -58,6 +64,7 @@ nav {
   margin: 0 auto;
   padding: 0 2em;
 }
+
 .nav-left ul,
 .nav-right ul {
   display: flex;
@@ -66,23 +73,32 @@ nav {
   margin: 0;
   padding: 0;
 }
+
 nav ul li a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 500;
 }
+
 nav ul li a:hover {
   color: var(--primary-color);
 }
+
 .section {
   padding: 4em 1em;
   text-align: center;
+
 }
 .aboutsection {
   padding: 2em 1em;
   text-align: center;
 }
-.homecontainer,
+
+.homecontainer {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+}
 .aboutcontainer {
   max-width: 900px;
   margin: auto;
@@ -92,6 +108,7 @@ nav ul li a:hover {
   max-width: 900px;
   margin: auto;
 }
+
 .home-image img {
   width: 500px;
   height: 500px;
@@ -99,25 +116,42 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 60%, transparent 100%);
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 60%,
+    transparent 100%
+  );
+
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
 }
-.res-text img,
-.dev-text img {
+
+.res-text img {
   width: 400px;
   height: 270px;
   margin: 5%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.res-text h2 {
+.res-text h2{
   text-align: center;
   margin-left: 92%;
   padding-bottom: 70px;
+}
+.dev-text img {
+  width: 400px;
+  height: 270px;
+  margin: 5%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .res-text {
   margin-top: 30px;
@@ -131,6 +165,8 @@ nav ul li a:hover {
   margin-top: 140px;
   flex: 1;
 }
+
+/* Footer */
 footer {
   background-color: var(--footer-bg);
   text-align: center;
