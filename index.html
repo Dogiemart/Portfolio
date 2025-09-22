@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>J.Co</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 </head> 
 
 <body>
-  <button id="dark-mode-toggle" class="toggle-btn">
-    <img src="dark.png" alt="Dark Mode" style="width: 30px; height: 20px; margin-bottom: -15%;" />
+  <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle dark mode">
+    <img id="dark-mode-icon" src="dark.png" alt="Dark Mode" />
   </button>
 
   <div class="page">
-    <header>
-      <nav>
+    <header role="banner">
+      <nav role="navigation">
         <div class="nav-left">
           <ul>
             <li><a href="#home">Home</a></li>
@@ -24,67 +24,85 @@
         <div class="nav-right">
           <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <section id="home" class="section">
-      <div class="homecontainer">
-        <div class="home-image">
-          <img src="josh1.png" alt="Image" />
-        </div>
-        <div class="home-text">
-          <h1>Hello, I’m Joshua!</h1>
-          <p>A dedicated Computer Science student specializing in Full stack web development and Cyber Security. With over 2 years of experience, I design and develop scalable, efficient solutions that drive business success. My expertise spans across latest adaptation and versatility, enabling me to deliver high-quality projects from concept to deployment. I am passionate about leveraging technology to solve real-world problems and continuously improving my craft through learning and collaboration.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div class="aboutcontainer">
-        <h1 class="about-title">About</h1>
-        <div class="about-images">
-          <div class="res-text">
-            <img src="web.png" alt="Restaurant Project">
+    <main role="main">
+      <section id="home" class="section">
+        <div class="homecontainer">
+          <div class="home-image">
+            <img src="josh1.png" alt="Joshua photo" />
           </div>
-          <div class="dev-text">
-            <img src="dev.png" alt="DevFest Butuan">
+          <div class="home-text">
+            <h1>Hello, I’m Joshua!</h1>
+            <p>
+              A dedicated Computer Science student specializing in Full stack web development and Cyber Security. 
+              With over 2 years of experience, I design and develop scalable, efficient solutions that drive business success. 
+              My expertise spans across latest adaptation and versatility, enabling me to deliver high-quality projects 
+              from concept to deployment. I am passionate about leveraging technology to solve real-world problems 
+              and continuously improving my craft through learning and collaboration.
+            </p>
           </div>
         </div>
+      </section>
 
-        <div class="summary">
-          <h2>Summary</h2>
-          <p id="summary-text">
-            Passionate about creating scalable applications and contributing to
-            innovative communities. I enjoy working with new technologies to
-            combine design, coding, technology, and user experience.
-          </p>
-          <button class="edit-btn" onclick="toggleEdit('summary-text', this)">Edit</button>
+      <section id="about" class="about">
+        <div class="aboutcontainer">
+          <h1 class="about-title">About</h1>
+          <div class="about-images">
+            <div class="res-text">
+              <img src="web.png" alt="Restaurant Project">
+            </div>
+            <div class="dev-text">
+              <img src="dev.png" alt="DevFest Butuan">
+            </div>
+          </div>
+          <div class="summary">
+            <h2>Summary</h2>
+            <p id="summary-text">
+              Passionate about creating scalable applications and contributing to
+              innovative communities. I enjoy working with new technologies to
+              combine design, coding, technology, and user experience.
+            </p>
+            <button class="edit-btn" data-target="summary-text">Edit</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="skills" class="skills section">
-      <div class="skillscontainer">
-        <h1 class="skills-title">Skills</h1>
-        <p id="skills-text">HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, Cyber Security basics.
-        </p>
-        <button class="edit-btn" onclick="toggleEdit('skills-text', this)">Edit</button>
-      </div>
-    </section>
+      <section id="skills" class="skills">
+        <div class="skillscontainer">
+          <h1 class="skills-title">Skills</h1>
+          <ul id="skills-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+          </ul>
+          <button class="edit-btn" data-target="skills-list">Edit</button>
+        </div>
+      </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p>Email me: joshuamuyacoco@gmail.com.</p>
-        <p>Phone: 09396458666.</p>
-      </div>
-    </section>
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Contact</h2>
+          <p>Email me: joshuamuyacoco@gmail.com.</p>
+          <p>Phone: 09396458666.</p>
+        </div>
+      </section>
+    </main>
 
-    <footer>
+    <footer role="contentinfo">
       <p>&copy; 2025 @Josh</p>
+      <div class="social-links">
+        <a href="https://github.com/dogiemart" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+      </div>
+      <a href="#home" class="back-to-top">Back to Top</a>
     </footer>
   </div>
 
