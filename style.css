@@ -250,7 +250,24 @@ footer a:focus {
 
 .back-to-top {
   font-weight: bold;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, background 0.3s ease;
 }
+
+.back-to-top:hover {
+  background: #ff9100;
+}
+
 
 @media (max-width: 768px) {
   .homecontainer {
