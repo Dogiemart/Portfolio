@@ -2,8 +2,9 @@ const toggleBtn = document.getElementById("dark-mode-toggle");
 const darkIcon = document.getElementById("dark-mode-icon");
 const page = document.querySelector(".page");
 const editButtons = document.querySelectorAll(".edit-btn");
-const navLinks = document.querySelectorAll("nav ul li a");
 const backToTop = document.querySelector(".back-to-top");
+const navLinks = document.querySelectorAll(".nav-link");
+const sections = document.querySelectorAll("section");
 
 if (localStorage.getItem("theme") === "dark") {
   page.classList.add("dark");
@@ -46,9 +47,15 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+
   let current = "";
-  document.querySelectorAll("section").forEach((section) => {
-    const sectionTop = section.offsetTop - 120;
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 100;
     if (scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
@@ -56,38 +63,8 @@ window.addEventListener("scroll", () => {
 
   navLinks.forEach((link) => {
     link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
+    if (link.getAttribute("href") === "#" + current) {
       link.classList.add("active");
     }
-  });
-
-  if (window.scrollY > 200) {
-    backToTop.style.opacity = "1";
-    backToTop.style.pointerEvents = "auto";
-  } else {
-    backToTop.style.opacity = "0";
-    backToTop.style.pointerEvents = "none";
-  }
-});
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute("href").substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      window.scrollTo({
-        top: targetSection.offsetTop - 60,
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
-backToTop.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
   });
 });
