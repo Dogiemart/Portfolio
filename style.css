@@ -141,6 +141,25 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
+.skillscontainer {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  padding: 2em 1em;
+}
+
+.skills-title {
+  margin-bottom: 1em;
+  font-size: 1.8em;
+}
+
+#skills-text[contenteditable="true"] {
+  outline: 2px dashed var(--primary-color);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
 .home-image img {
   width: 500px;
   height: 500px;
