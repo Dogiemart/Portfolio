@@ -27,27 +27,14 @@ editButtons.forEach((btn) => {
     const targetId = btn.dataset.target;
     const element = document.getElementById(targetId);
 
-    if (targetId === "skills-list") {
-      const items = element.querySelectorAll("li");
-      if (items[0].isContentEditable) {
-        items.forEach(li => li.contentEditable = "false");
-        btn.textContent = "Edit";
-        localStorage.setItem("skills-list", element.innerHTML);
-      } else {
-        items.forEach(li => li.contentEditable = "true");
-        items[0].focus();
-        btn.textContent = "Save";
-      }
+    if (element.isContentEditable) {
+      element.contentEditable = "false";
+      btn.textContent = "Edit";
+      localStorage.setItem(targetId, element.innerHTML);
     } else {
-      if (element.isContentEditable) {
-        element.contentEditable = "false";
-        btn.textContent = "Edit";
-        localStorage.setItem(targetId, element.innerHTML);
-      } else {
-        element.contentEditable = "true";
-        element.focus();
-        btn.textContent = "Save";
-      }
+      element.contentEditable = "true";
+      element.focus();
+      btn.textContent = "Save";
     }
   });
 });
