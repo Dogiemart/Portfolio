@@ -22,9 +22,15 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
 }
+
+h1, h2, h3, .skills-title, .about-title {
+  /* maybe use a heavier weight or a different font if using a pair */
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 .page {
   background-color: var(--bg-color);
