@@ -8,16 +8,16 @@ const sections = document.querySelectorAll("section");
 
 if (localStorage.getItem("theme") === "dark") {
   page.classList.add("dark");
-  darkIcon.src = "light.png";
+  darkIcon.src = "Light.png";
 }
 
 toggleBtn.addEventListener("click", () => {
   page.classList.toggle("dark");
   if (page.classList.contains("dark")) {
     localStorage.setItem("theme", "dark");
-    darkIcon.src = "light.png";
+    darkIcon.src = "Light.png";
   } else {
-    localStorage.setItem("theme", "light");
+    localStorage.setItem("theme", "Light");
     darkIcon.src = "dark.png";
   }
 });
