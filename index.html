@@ -10,7 +10,7 @@
 
 <body>
   <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle dark mode">
-    <img id="dark-mode-icon" src="dark.png" alt="Dark Mode" />
+    <img id="dark-mode-icon" src="/Images/dark.png" alt="Dark Mode" />
   </button>
 
   <div class="page">
@@ -35,7 +35,7 @@
       <section id="home" class="section">
         <div class="homecontainer">
           <div class="home-image">
-            <img src="josh1.png" alt="Joshua photo" />
+            <img src="/Images/josh1.png" alt="Joshua photo" />
           </div>
           <div class="home-text">
             <h1>Hello, I’m Joshua!</h1>
@@ -55,14 +55,14 @@
           <h1 class="about-title">About</h1>
           <div class="about-images">
             <div class="about-card">
-              <img src="web.png" alt="Restaurant Project">
+              <img src="/Images/web.png" alt="Restaurant Project">
               <p id="about-desc1" contenteditable="false" class="about-desc">
                 A responsive restaurant website project I built using modern web technologies.
               </p>
               <button class="edit-btn" data-target="about-desc1">Edit</button>
             </div>
             <div class="about-card">
-              <img src="dev.png" alt="DevFest Butuan">
+              <img src="/Images/dev.png" alt="DevFest Butuan">
               <p id="about-desc2" contenteditable="false" class="about-desc">
                 Volunteered and contributed to DevFest Butuan, focusing on community-driven tech solutions.
               </p>
@@ -79,6 +79,11 @@
             <button class="edit-btn" data-target="summary-text">Edit</button>
           </div>
         </div>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <input type="file" name="image" accept="image/*" required>
+          <button type="submit">Upload Image</button>
+        </form>
+        
       </section>
 
       <section id="skills" class="section">
