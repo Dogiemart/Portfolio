@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
 </head> 
+
 <body>
   <button id="dark-mode-toggle" class="toggle-btn" aria-label="Toggle dark mode">
     <img id="dark-mode-icon" src="dark.png" alt="Dark Mode" />
@@ -55,16 +56,22 @@
           <div class="about-images">
             <div class="about-card">
               <img src="web.png" alt="Restaurant Project">
-              <p class="about-desc">A responsive restaurant website project I built using modern web technologies.</p>
+              <p id="about-desc1" contenteditable="false" class="about-desc">
+                A responsive restaurant website project I built using modern web technologies.
+              </p>
+              <button class="edit-btn" data-target="about-desc1">Edit</button>
             </div>
             <div class="about-card">
               <img src="dev.png" alt="DevFest Butuan">
-              <p class="about-desc">Volunteered and contributed to DevFest Butuan, focusing on community-driven tech solutions.</p>
+              <p id="about-desc2" contenteditable="false" class="about-desc">
+                Volunteered and contributed to DevFest Butuan, focusing on community-driven tech solutions.
+              </p>
+              <button class="edit-btn" data-target="about-desc2">Edit</button>
             </div>
           </div>
           <div class="summary">
             <h2>Summary</h2>
-            <p id="summary-text">
+            <p id="summary-text" contenteditable="false">
               Passionate about creating scalable applications and contributing to
               innovative communities. I enjoy working with new technologies to
               combine design, coding, technology, and user experience.
@@ -74,16 +81,15 @@
         </div>
       </section>
 
-
       <section id="skills" class="section">
         <div class="skillscontainer">
           <h1 class="skills-title">Skills</h1>
           <ul id="skills-list">
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
+            <li contenteditable="false">HTML5</li>
+            <li contenteditable="false">CSS3</li>
+            <li contenteditable="false">JavaScript</li>
+            <li contenteditable="false">React</li>
+            <li contenteditable="false">Node.js</li>
           </ul>
           <button class="edit-btn" data-target="skills-list">Edit</button>
         </div>
