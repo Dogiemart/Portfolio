@@ -201,6 +201,18 @@ nav ul li a:focus {
   justify-content: center;
 }
 
+.section,
+.about,
+.skills,
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 #skills-list li {
   background: #fff;
   color: #000;
