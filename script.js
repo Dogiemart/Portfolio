@@ -3,6 +3,7 @@ const darkIcon = document.getElementById("dark-mode-icon");
 const page = document.querySelector(".page");
 const editButtons = document.querySelectorAll(".edit-btn");
 const navLinks = document.querySelectorAll("nav ul li a");
+const backToTop = document.querySelector(".back-to-top");
 
 if (localStorage.getItem("theme") === "dark") {
   page.classList.add("dark");
@@ -58,5 +59,35 @@ window.addEventListener("scroll", () => {
     if (link.getAttribute("href").includes(current)) {
       link.classList.add("active");
     }
+  });
+
+  if (window.scrollY > 200) {
+    backToTop.style.opacity = "1";
+    backToTop.style.pointerEvents = "auto";
+  } else {
+    backToTop.style.opacity = "0";
+    backToTop.style.pointerEvents = "none";
+  }
+});
+
+navLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop - 60,
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+backToTop.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
 });
