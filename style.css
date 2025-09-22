@@ -38,6 +38,16 @@ h1, h2, h3, .skills-title, .about-title {
   transition: background-color var(--transition), color var(--transition);
 }
 
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 4em 1em;
+  text-align: center;
+}
+
 .toggle-btn {
   position: fixed;
   top: 10px;
@@ -62,6 +72,9 @@ header {
   background-color: var(--nav-bg);
   padding: 1em 0;
   border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 900;
 }
 
 nav {
@@ -92,38 +105,15 @@ nav ul li a:focus {
   color: var(--primary-color);
 }
 
-.section {
-  padding: 4em 1em;
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.about {
-  padding: 2em 1em;
-}
-
-.about-title,
-.skills-title {
-  text-align: center;
-  margin-bottom: 2em;
-}
-
 .homecontainer,
 .aboutcontainer,
 .skillscontainer,
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.container {
-  display: block;
 }
 
 .aboutcontainer {
@@ -198,32 +188,26 @@ nav ul li a:focus {
 #skills-list {
   list-style: none;
   padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin: 0 0 1em 0;
+  display: flex;
   gap: 1.5em;
-  width: 100%;
-  max-width: 900px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #skills-list li {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--text-color);
-  padding: 20px;
-  border-radius: 15px;
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: background var(--transition), transform var(--transition);
 }
 
 #skills-list li:hover {
-  transform: translateY(-8px) scale(1.05);
-  background: rgba(0, 119, 204, 0.25);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-4px);
 }
 
 footer {
@@ -256,4 +240,21 @@ footer a:focus {
 
 .back-to-top {
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .homecontainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .home-text {
+    margin-top: 20px;
+    padding: 0;
+  }
+  nav ul {
+    gap: 1em;
+  }
+  #skills-list {
+    gap: 0.8em;
+  }
 }
