@@ -7,10 +7,10 @@
 
 .page {
   --bg-color: #ffbf69;
-  --text-color: #000;
+  --text-color: #000000;
   --primary-color: #0077cc;
   --nav-bg: #ff9f1c;
-  --footer-bg: #fff;
+  --footer-bg: #ffffff;
   --transition: 0.3s ease-in-out;
 }
 
@@ -53,7 +53,7 @@ h1, h2, h3 {
   top: 10px;
   right: 20px;
   background: var(--primary-color);
-  padding: 8px;
+  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
@@ -108,13 +108,12 @@ nav ul li a.active {
 .aboutcontainer,
 .skillscontainer,
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2em;
 }
 
 .container {
@@ -133,6 +132,35 @@ nav ul li a.active {
   flex-wrap: wrap;
 }
 
+.about-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  padding: 15px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.25);
+}
+
+.about-desc {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
 .summary {
   text-align: center;
   max-width: 600px;
@@ -143,8 +171,8 @@ nav ul li a.active {
   padding: 6px 12px;
   border: none;
   border-radius: 5px;
-  background: #fff;
-  color: #000;
+  background: #ffffff;
+  color: #000000;
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
 }
@@ -165,18 +193,11 @@ nav ul li a.active {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.res-text img,
-.dev-text img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .home-text {
+  margin-top: 40px;
   flex: 1;
   padding: 0 20px;
 }
@@ -189,7 +210,7 @@ nav ul li a.active {
 #skills-list {
   list-style: none;
   padding: 0;
-  margin: 2em 0;
+  margin: 0;
   display: flex;
   gap: 1em;
   flex-wrap: wrap;
@@ -197,7 +218,7 @@ nav ul li a.active {
 }
 
 #skills-list li {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   color: var(--text-color);
   padding: 15px 25px;
@@ -205,12 +226,11 @@ nav ul li a.active {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   font-weight: 500;
   transition: transform 0.3s ease, background 0.3s ease;
-  min-width: 100px;
 }
 
 #skills-list li:hover {
   transform: translateY(-5px);
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 footer {
