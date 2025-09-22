@@ -27,7 +27,6 @@ body {
 }
 
 h1, h2, h3, .skills-title, .about-title {
-  /* maybe use a heavier weight or a different font if using a pair */
   font-family: 'Montserrat', sans-serif;
 }
 
