@@ -2,6 +2,7 @@ const toggleBtn = document.getElementById("dark-mode-toggle");
 const darkIcon = document.getElementById("dark-mode-icon");
 const page = document.querySelector(".page");
 const editButtons = document.querySelectorAll(".edit-btn");
+const navLinks = document.querySelectorAll("nav ul li a");
 
 if (localStorage.getItem("theme") === "dark") {
   page.classList.add("dark");
@@ -40,5 +41,22 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[id]").forEach((el) => {
     const saved = localStorage.getItem(el.id);
     if (saved) el.innerHTML = saved;
+  });
+});
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  document.querySelectorAll("section").forEach((section) => {
+    const sectionTop = section.offsetTop - 120;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").includes(current)) {
+      link.classList.add("active");
+    }
   });
 });
